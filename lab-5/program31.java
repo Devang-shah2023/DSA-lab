@@ -4,8 +4,8 @@ public class program31 {
     public static void main(String[] args) {
 
         Scanner scanner= new Scanner(System.in);
-        int rowsA=2, colsA=3;
-        int rowsB=3, colsB=2;
+        int rowsA=3, colsA=2;
+        int rowsB=2, colsB=3;
 
         int[][]A= new int[rowsA][colsA];
         int[][]B= new int[rowsB][colsB];
@@ -40,7 +40,7 @@ public class program31 {
         for(int i=0; i<rowsA; i++){
             for(int j=0; j<colsB; j++){
                 System.out.print(R[i][j]+" ");
-            }
+            }System.out.println("\n");
         }
     }
 }
