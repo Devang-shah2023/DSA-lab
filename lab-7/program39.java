@@ -29,34 +29,34 @@ class Stack {
     }
 }
 
-
-public class program40 {
+public class program39 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a string: ");
         String str = sc.next().toLowerCase();
-        if(str.length() %2 == 1) {
+        if(str.length() % 2 == 0) {
             System.out.println("Invalid String");
             return;
         }
-        Stack stack = new Stack(str.length());
-        for(int i=0; i<str.length(); i++) {
-            stack.push(str.charAt(i));
+        int temp = str.length()/2;
+        if(str.charAt(temp) != 'c') {
+            System.out.println("Invalid String");
+            return;
         }
-        int index = 1;
-        while(index<=str.length()) {
+        int len = str.length()/2;
+        Stack stack = new Stack(len);
+        int index = 0;
+        while(index < len) {
+            stack.push(str.charAt(index));
+            index++;
+        }
+        index++;
+        
+        while(index < str.length()) {
             char ch = stack.pop();
-            if(index <= str.length()/2) {
-                if(ch != 'b') {
-                    System.out.println("Invalid String");
-                    return;
-                }
-            }
-            else {
-                if(ch!='a') {
-                    System.out.println("Invalid String");
-                    return;
-                }
+            if(str.charAt(index) != ch) {
+                System.out.println("Invalid String");
+                return;
             }
             index++;
         }
